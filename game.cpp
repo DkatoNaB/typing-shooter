@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "Menu.h"
-#include "GameView.h"
+#include "GUI/Menu.h"
+#include "GUI/GameView.h"
 #include <iostream>
 
 
@@ -62,7 +62,7 @@ int main()
                 case sf::Event::TextEntered:{
                     if (event.text.unicode < 128){
                         char c = tolower((char)event.text.unicode);
-                        currentGameView.l.shoot(c);
+                        currentGameView.l->shoot(c);
                         std::cout << c;
                     }
                     

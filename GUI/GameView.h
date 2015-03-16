@@ -8,7 +8,7 @@
 
 #pragma once
 #include "SFML/Graphics.hpp"
-#include "GameLogic.h"
+#include "../Logic/GameLogic.h"
 #include "EnemyGUI.h"
 #include <iostream>
 
@@ -19,7 +19,7 @@ public:
     ~GameView();
 
     Position p = Position(800,600);
-    GameLogic l = GameLogic(p);
+	GameLogic *l;// = GameLogic(p);
 
     void draw(sf::RenderWindow &window);
 private:

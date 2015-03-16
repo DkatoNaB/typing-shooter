@@ -15,6 +15,8 @@ GameLogic::GameLogic(Position resolution)
 	vocabulary = new Vocabulary("Words/en");
 }
 
+
+
 void GameLogic::newGame()
 {
 	gameOver = false;
