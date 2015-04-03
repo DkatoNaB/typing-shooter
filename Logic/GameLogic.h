@@ -1,7 +1,9 @@
 #pragma once
 #include "Enemy.h"
+#include "Missle.h"
 #include "Vocabulary.h"
 #include <vector>
+
 class GameLogic
 {
 public:
@@ -14,13 +16,16 @@ public:
 	int getScore(){ return score; };
 	bool isGameOver(){ return gameOver; };
 	Position getPlayerPosition(){ return playerPosition; };
+    Enemy* getTarget(){ return target;};
 	std::vector<Enemy>& getEnemies(){ return enemies;};
-	int getWaveCount(){ return waveCount; };
+    std::vector<Missle>& getMissles(){ return missles;};
+    int getWaveCount(){ return waveCount; };
 	bool isWaveOver(){ return waveOver; };
 	int getEnemyCount(){ return enemyCount; };
 
 protected:
 	std::vector<Enemy> enemies;
+    std::vector<Missle> missles;
 	int score,waveCount,shotIndex,enemyCount;
 	bool gameOver;
 	bool waveOver;

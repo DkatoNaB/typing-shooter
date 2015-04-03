@@ -9,7 +9,9 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "GameLogic.h"
+#include "PlayerGUI.h"
 #include "EnemyGUI.h"
+#include "MissleGUI.h"
 #include <iostream>
 
 class GameView
@@ -23,7 +25,10 @@ public:
 
     void draw(sf::RenderWindow &window);
 private:
+    float
+    backgroundOffset = 0;
+    sf::Sprite background;
     std::vector<EnemyGUI> enemies;
-    sf::RectangleShape player;
+    PlayerGUI player;
     sf::Clock deltaClock;
 };

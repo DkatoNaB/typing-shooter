@@ -6,8 +6,8 @@
 
 int main()
 {
-    
-    sf::RenderWindow window(sf::VideoMode(600, 600), "Typing Shooter");
+    // TODO: global méretből!
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Typing Shooter");
     
     window.setFramerateLimit(60);
     window.setVerticalSyncEnabled(false);
@@ -80,10 +80,8 @@ int main()
         window.clear();
         
         if(gameRunning){
-            std::cout << "GameDraw" << std::endl;
             currentGameView.draw(window);
         }else{
-            std::cout << "Menudraw" << std::endl;
             menu.draw(window);
         }
         

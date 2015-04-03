@@ -8,6 +8,7 @@
 
 #include "GameView.h"
 
+sf::Texture backgroundTexture;
 
 void getEnemies(std::vector<EnemyGUI> &enemies, GameLogic &l);
 GameView::GameView(float width, float height)
@@ -15,10 +16,13 @@ GameView::GameView(float width, float height)
     l.newGame();
     getEnemies(enemies, l);
     
-    player.setSize(sf::Vector2f(10, 10));
-    player.setPosition(sf::Vector2f(l.getPlayerPosition().getX(), l.getPlayerPosition().getY()));
-    player.setOrigin(sf::Vector2f(5, 5));
-    player.setFillColor(sf::Color::Green);
+    player = PlayerGUI();    
+    player.body.setPosition(sf::Vector2f(l.getPlayerPosition().getX(), l.getPlayerPosition().getY()));
+    
+    backgroundTexture.loadFromFile("stars.png");
+    backgroundTexture.setRepeated(true);
+    background.setTexture(backgroundTexture);
+    background.setTextureRect(sf::IntRect(0,0,width,height));
 }
 
 
@@ -29,6 +33,9 @@ GameView::~GameView()
 
 void GameView::draw(sf::RenderWindow &window)
 {
+    // TODO: ez kellhet ha engedjük az átméretezést, de inkább ne
+    //background.setTextureRect(sf::IntRect(0,0,window.getSize().x,window.getSize().y));
+    window.draw(background);
     if (l.isWaveOver()){ l.nextWave(); getEnemies(enemies, l); }
     
     for (int i = 0; i < enemies.size(); i++)
@@ -38,12 +45,22 @@ void GameView::draw(sf::RenderWindow &window)
             window.draw(enemies[i]);
         }
     }
-    window.draw(player);
-    l.update(deltaClock.getElapsedTime().asSeconds());
+    for (int i = 0; i < l.getMissles().size(); i++)
+    {
+        Missle missle = l.getMissles()[i];
+        if(missle.gui == 0){
+           MissleGUI missleGUI = MissleGUI(missle);
+            missle.gui = &missleGUI;
+        }
+        missle.gui->draw(window);
+    }
+    player.draw(window);
+    float deltaTime = deltaClock.getElapsedTime().asSeconds();
+    l.update(deltaTime);
+    backgroundOffset = fmod((backgroundOffset - deltaTime * 100),backgroundTexture.getSize().y);
+    background.setTextureRect(sf::IntRect(0,backgroundOffset,800,600));
     deltaClock.restart();
 }
-
-
 
 void getEnemies(std::vector<EnemyGUI> &enemies, GameLogic &l)
 {

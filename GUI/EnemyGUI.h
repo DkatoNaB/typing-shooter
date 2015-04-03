@@ -9,7 +9,7 @@ public:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void setPosition(sf::Vector2f position);
 protected:
-	sf::RectangleShape body;
+	sf::Sprite body;
 	sf::Text* text;
 };
 
