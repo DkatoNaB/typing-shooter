@@ -21,7 +21,7 @@ public:
     ~GameView();
 
     Position p = Position(800,600);
-    GameLogic l = GameLogic(p);
+	GameLogic *l;// = GameLogic(p);
 
     void draw(sf::RenderWindow &window);
 private:
