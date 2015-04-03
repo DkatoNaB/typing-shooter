@@ -19,7 +19,7 @@ GameView::GameView(float width, float height)
     getEnemies(enemies, *l);
     
     player = PlayerGUI();    
-    player.body.setPosition(sf::Vector2f(l.getPlayerPosition().getX(), l.getPlayerPosition().getY()));
+    player.body.setPosition(sf::Vector2f(l->getPlayerPosition().getX(), l->getPlayerPosition().getY()));
     
     backgroundTexture.loadFromFile("stars.png");
     backgroundTexture.setRepeated(true);
@@ -48,9 +48,9 @@ void GameView::draw(sf::RenderWindow &window)
         }
     }
 
-    for (int i = 0; i < l.getMissles().size(); i++)
+    for (int i = 0; i < l->getMissles().size(); i++)
     {
-        Missle missle = l.getMissles()[i];
+        Missle missle = l->getMissles()[i];
         if(missle.gui == 0){
            MissleGUI missleGUI = MissleGUI(missle);
             missle.gui = &missleGUI;
