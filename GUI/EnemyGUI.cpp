@@ -1,26 +1,5 @@
 #include "EnemyGUI.h"
 
-<<<<<<< HEAD
-sf::Texture bodyTexture;
-
-EnemyGUI::EnemyGUI(Enemy &enemy)
-{
-    
-    bodyTexture.loadFromFile("enemy.png");
-    //body.setFillColor(sf::Color::Red);
-    //body.setSize(sf::Vector2f(10, 10));
-    body.setTexture(bodyTexture);
-    body.setOrigin(5, 5);
-    body.setPosition(sf::Vector2f(enemy.getPosition().getX(), enemy.getPosition().getY()));
-    
-    sf::Font* f = new sf::Font();
-    f->loadFromFile("arial.ttf");
-    text = new sf::Text(enemy.getText(),*f);
-    text->setColor(sf::Color::White);
-    text->setPosition(sf::Vector2f(body.getPosition().x + bodyTexture.getSize().x, body.getPosition().y));
-    text->setCharacterSize(12);
-    
-=======
 EnemyGUI::EnemyGUI(Enemy &enemy)
 {
 	this->enemy = &enemy;
@@ -41,21 +20,16 @@ EnemyGUI::EnemyGUI(Enemy &enemy)
 	text->setStyle(sf::Text::Style::Bold);
 
     rotateSpeed = (std::rand() % 50) + 30;
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }
 
 void EnemyGUI::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-    target.draw(body,states);
-    target.draw(*text,states);
+	target.draw(body,states);
+	target.draw(*text,states);
 }
 
 void EnemyGUI::setPosition(sf::Vector2f position)
 {
-<<<<<<< HEAD
-    body.setPosition(position);
-    text->setPosition(sf::Vector2f(body.getPosition().x + bodyTexture.getSize().x + 1, body.getPosition().y - bodyTexture.getSize().y/2- text->getLocalBounds().top));
-=======
 	body.setPosition(position);
 	text->setPosition(sf::Vector2f(body.getPosition().x + body.getSize().x + 1, body.getPosition().y - body.getSize().y/2- text->getLocalBounds().top));
     body.setRotation(body.getRotation()+rotateSpeed*0.1);
@@ -69,5 +43,4 @@ void EnemyGUI::setAsTarget()
 void EnemyGUI::updateText()
 {
 	text->setString(enemy->getText());
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }

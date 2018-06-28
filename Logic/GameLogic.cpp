@@ -7,32 +7,15 @@
 
 GameLogic::GameLogic()
 {
-<<<<<<< HEAD
-    srand(time(NULL));
-    this->resolution = resolution;
-    PLAYER_VERTICAL_POSITION = resolution.getY() - 30;
-    playerPosition = Position((resolution.getX() / 2), PLAYER_VERTICAL_POSITION);
-    target = 0;
-    vocabulary = new Vocabulary("en");
-=======
 	srand((int)time(NULL));
 	playerPosition = Position(PLAYER_HORIZONTAL_POSITION, PLAYER_VERTICAL_POSITION);
 	target = 0;
 	vocabulary = new Vocabulary("Words/en");
 	currentSpawnRange = SPAWN_RANGE;
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }
-
-
 
 void GameLogic::newGame()
 {
-<<<<<<< HEAD
-    gameOver = false;
-    score = 0;
-    waveCount = 0;
-    nextWave();
-=======
 	gameOver = false;
 	score = 0;
 	waveCount = 0;
@@ -42,48 +25,11 @@ void GameLogic::newGame()
 	hardChance = 8;
     remainingEnemyCount = 0;
 	currentSpawnRange = SPAWN_RANGE;
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }
 
 //Updates all enemies
 void GameLogic::update(float deltaTime)
 {
-<<<<<<< HEAD
-    for (int i = 0; i < missles.size(); i++)
-    {
-        if(missles[i].updateWithHitTest(deltaTime))
-        {
-            if(target != 0){
-                // TODO: lehet a missle targetje alapján kellene nézni
-                //Did we hit the target?
-                if (target->getText()[shotIndex] == missles[i].c)
-                {	//Is it dead?
-                    if (shotIndex+1 == (int)(target->getText().length()))
-                    {
-                        shotIndex = 0;
-                        target->kill();
-                        score += target->getDifficulty() * KILL_SCORE;
-                        target = 0;
-                        remainingEnemyCount--;
-                    }
-                    shotIndex++;
-                    return true;
-                }
-                std::cout << "HIT";
-            }
-            missles.erase(missles.begin()+i);
-        }
-    }
-    if (remainingEnemyCount != 0)
-        for (std::vector<Enemy>::iterator iterator = enemies.begin(), end = enemies.end(); iterator != end; ++iterator)
-        {
-            if (!iterator->isDead()){
-                iterator->update(deltaTime);
-                if (iterator->getPosition().distance(playerPosition) < 5) gameOver = true;
-            }
-        }
-    else waveOver = true;
-=======
 	if (remainingEnemyCount != 0)
 	{
 		for (std::vector<Enemy>::iterator iterator = enemies.begin(), end = enemies.end(); iterator != end; ++iterator)
@@ -105,25 +51,11 @@ void GameLogic::update(float deltaTime)
 		
 	}
 	else waveOver = true;
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }
 
 //Looks for a target
 bool GameLogic::aim(char c)
 {
-<<<<<<< HEAD
-    for (std::vector<Enemy>::iterator iterator = enemies.begin(), end = enemies.end(); iterator != end; ++iterator)
-    {
-        //e.g: input:'c'  Enemy text: "clever"
-        if (iterator->getText()[0] == c && !iterator->isDead())
-        {
-            target = &(*iterator);
-            shootAt(c);
-            return true;
-        }
-    }
-    return false;
-=======
 	std::vector<std::vector<Enemy>::iterator> possibleTargets;
 	for (std::vector<Enemy>::iterator iterator = enemies.begin(), end = enemies.end(); iterator != end; ++iterator)
 	{
@@ -159,29 +91,24 @@ bool GameLogic::aim(char c)
 		return true;
 	}
 	return false;
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }
 
 //Tries to shoot something
 bool GameLogic::shoot(char c)
 {
-    //Do we have a target?
-    if (target == 0){
-        //Look for a target
-        return aim(c);
-    }
-    else{
-        //Try to shoot at target
-        return shootAt(c);
-    }
+	//Do we have a target?
+	if (target == 0){
+		//Look for a target
+		return aim(c);
+	}
+	else{
+		//Try to shoot at target
+		return shootAt(c);
+	}
 }
 
 //Tries to shoot at a given enemy
 bool GameLogic::shootAt(char c){
-<<<<<<< HEAD
-    missles.push_back(Missle(Position(playerPosition.getX(),playerPosition.getY()),target,c));
-    return false;
-=======
 	//Did we hit the target?
 	if (target->canShoot(c))
 	{	//Is it dead?
@@ -197,24 +124,11 @@ bool GameLogic::shootAt(char c){
 			return true;
 	}
 	return false;
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }
 
 //Spawns enemies
 void GameLogic::createEnemies()
 {
-<<<<<<< HEAD
-    enemies.clear();
-    enemyCount = BASE_ENEMY_COUNT + (waveCount - 1)  * BONUS_ENEMY_PER_WAVE;
-    for (int i = 0; i < enemyCount; ++i)
-    {
-        std::string text = vocabulary->getRandomWord();
-        std::cout << text << std::endl;
-        Position p(rand() % ((int)resolution.getX()+1),-1* rand() % (SPAWN_RANGE));
-        enemies.push_back(Enemy(text, p, playerPosition, 30));
-        remainingEnemyCount++;
-    }
-=======
 	enemies.clear();
 	enemyCount = BASE_ENEMY_COUNT + (waveCount - 1)  * BONUS_ENEMY_PER_WAVE ;
 	for (int i = 0; i < enemyCount; ++i)
@@ -245,19 +159,12 @@ void GameLogic::createEnemies()
 
 	currentSpawnRange *= 0.95f;
 
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }
 
 void GameLogic::nextWave()
 {
-<<<<<<< HEAD
-    waveOver = false;
-    waveCount++;
-    createEnemies();
-=======
 	missiles.clear();
 	waveOver = false;
 	waveCount++;
 	createEnemies();
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 }

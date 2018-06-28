@@ -34,9 +34,6 @@ public:
 	*/
 	void updateText();
 protected:
-<<<<<<< HEAD
-	sf::Sprite body;
-=======
 	/**
 	@brief The body of the enemy.
 	*/
@@ -44,7 +41,6 @@ protected:
 	/**
 	@brief Text of the enemy.
 	*/
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 	sf::Text* text;
 	/**
 	@brief The enemy's representation in logic.

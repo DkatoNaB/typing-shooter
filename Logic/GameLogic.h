@@ -2,12 +2,8 @@
 #define GAMELOGIC_H
 
 #include "Enemy.h"
-#include "Missle.h"
 #include "Vocabulary.h"
 #include <vector>
-<<<<<<< HEAD
-
-=======
 #include "Missile.h"
 
 /**
@@ -15,7 +11,6 @@
 @note You can create a new gamemode by creating a subclass to this one.
 @author Benjamin Ferenc Hajas
 */
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 class GameLogic
 {
 public:
@@ -68,12 +63,6 @@ public:
 		@returns the player's position.
 	*/
 	Position getPlayerPosition(){ return playerPosition; };
-<<<<<<< HEAD
-    Enemy* getTarget(){ return target;};
-	std::vector<Enemy>& getEnemies(){ return enemies;};
-    std::vector<Missle>& getMissles(){ return missles;};
-    int getWaveCount(){ return waveCount; };
-=======
 	/**
 		@brief Returns a list of the current enemies.
 		@returns a reference of the list of the current enemies.
@@ -94,7 +83,6 @@ public:
 		@returns true if wave is over.
 		@returns false otherwise.
 	*/
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 	bool isWaveOver(){ return waveOver; };
 	/**
 		@brief Returns the count of the current enemies.
@@ -112,10 +100,6 @@ protected:
 	@brief List of the current enemies.
 	*/
 	std::vector<Enemy> enemies;
-<<<<<<< HEAD
-    std::vector<Missle> missles;
-	int score,waveCount,shotIndex,enemyCount;
-=======
 	/**
 	@brief List of the currently active missiles.
 	*/
@@ -135,7 +119,6 @@ protected:
 	/**
 	@brief Is game over?
 	*/
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 	bool gameOver;
 	/**
 	@brief Is wave over?.

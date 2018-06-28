@@ -10,11 +10,6 @@
 class Position
 {
 public:
-<<<<<<< HEAD
-    Position(){};
-	Position(int x, int y){ this->x=x; this->y = y; };
-	Position(const Position &position){ x= position.x; y = position.y; };
-=======
 	Position(){};
 	/**
 		@brief Creates a new Position.
@@ -29,7 +24,6 @@ public:
 		@brief Returns the x position of the point.
 		@returns the x position of the point.
 	*/
->>>>>>> 3deaa0db76294099f9348e200563f3b00641fb6b
 	float getX(){ return x; };
 	/**
 	@brief Returns the y position of the point.
