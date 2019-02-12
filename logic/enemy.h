@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "Position.h"
+#include "position.h"
 #include <string>
 
 /**

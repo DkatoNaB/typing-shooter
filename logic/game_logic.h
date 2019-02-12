@@ -1,11 +1,11 @@
 #ifndef GAMELOGIC_H
 #define GAMELOGIC_H
 
-#include "Enemy.h"
-#include "Vocabulary.h"
-#include <vector>
-#include "Missile.h"
+#include "enemy.h"
+#include "vocabulary.h"
+#include "missile.h"
 
+#include <vector>
 /**
 @brief Manages the whole game
 @note You can create a new gamemode by creating a subclass to this one.

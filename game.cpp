@@ -1,11 +1,11 @@
 #include <SFML/Graphics.hpp>
-#include "Logic/GameLogic.h"
-#include "GUI/EnemyGUI.h"
-#include "GUI/MissileGUI.h"
-#include "GUI/Scenes/Scene.cpp"
-#include "GUI/Scenes/MainMenu.cpp"
-#include "GUI/Scenes/ScoreScene.cpp"
-#include "GUI/Scenes/GameScene.cpp"
+#include <logic/game_logic.h>
+#include "gui/enemy_gui.h"
+#include "gui/missile_gui.h"
+#include "gui/scenes/scene.cpp"
+#include "gui/scenes/main_menu.cpp"
+#include "gui/scenes/score_scene.cpp"
+#include "gui/scenes/game_schene.cpp"
 
 #include <iostream>
 
@@ -62,10 +62,10 @@ int main()
 	int currentScene = 0;
 	MainMenu mainMenu;
 	scenes.push_back(&mainMenu);
-    GameScene gameScene;
-    scenes.push_back(&gameScene);
-    ScoreScene scoreScene;
-    scenes.push_back(&scoreScene);
+	GameScene gameScene;
+	scenes.push_back(&gameScene);
+	ScoreScene scoreScene;
+	scenes.push_back(&scoreScene);
 
 	//Creating window
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Typing Shooter", sf::Style::Close);

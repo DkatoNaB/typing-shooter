@@ -6,7 +6,7 @@
 #ifndef MISSILE_H
 #define MISSILE_H
 
-#include "Enemy.h"
+#include "enemy.h"
 
 class Missile
 {
