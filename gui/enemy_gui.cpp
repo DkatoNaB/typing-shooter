@@ -8,11 +8,11 @@ EnemyGUI::EnemyGUI(Enemy &enemy)
 	body.setOrigin(7, 7);
 	body.setPosition(sf::Vector2f(enemy.getPosition().getX(), enemy.getPosition().getY()));
 	sf::Texture* texture = new sf::Texture;
-	texture->loadFromFile("Resources/Sprites/enemy.png");
+	texture->loadFromFile("resources/Sprites/enemy.png");
 	body.setTexture(texture);
 	
 	sf::Font* f = new sf::Font();
-	f->loadFromFile("Resources/Fonts/Ubuntu-Regular.ttf");
+	f->loadFromFile("resources/Fonts/Ubuntu-Regular.ttf");
 	text = new sf::Text(enemy.getText(),*f);
 	text->setColor(sf::Color::White);
 	text->setPosition(sf::Vector2f(body.getPosition().x + body.getSize().x, body.getPosition().y));

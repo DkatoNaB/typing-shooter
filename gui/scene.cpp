@@ -6,7 +6,7 @@ void Scene::hoverSound(bool f)
 {
 	if (f)
 	{
-		hbuffer.loadFromFile("Resources/Sounds/ooa.wav");
+		hbuffer.loadFromFile("resources/Sounds/ooa.wav");
 		hsound.setBuffer(hbuffer);
 		hsound.setVolume(50);
 		hsound.play();

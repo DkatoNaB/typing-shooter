@@ -10,7 +10,7 @@ GameLogic::GameLogic()
 	srand((int)time(NULL));
 	playerPosition = Position(PLAYER_HORIZONTAL_POSITION, PLAYER_VERTICAL_POSITION);
 	target = 0;
-	vocabulary = new Vocabulary("Words/en");
+	vocabulary = new Vocabulary("resources/words/en");
 	currentSpawnRange = SPAWN_RANGE;
 }
 

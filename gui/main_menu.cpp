@@ -10,7 +10,7 @@ int MainMenu::run(sf::RenderWindow &window)
 	//Setting background
 	sf::Sprite *background = new sf::Sprite();
 	sf::Texture *backgroundTexture = new sf::Texture;
-	backgroundTexture->loadFromFile("Resources/Backgrounds/stars.png");
+	backgroundTexture->loadFromFile("resources/Backgrounds/stars.png");
 	backgroundTexture->setRepeated(true);
 	background->setTexture(*backgroundTexture);
 	background->setTextureRect(sf::IntRect(0, 0, resolution.getX(), resolution.getY()));
@@ -18,7 +18,7 @@ int MainMenu::run(sf::RenderWindow &window)
 	//Loading logo
 	sf::RectangleShape *logo = new sf::RectangleShape();
 	sf::Texture *logoTexture = new sf::Texture;
-	logoTexture->loadFromFile("Resources/Menu/logo.png");
+	logoTexture->loadFromFile("resources/Menu/logo.png");
 	logoTexture->setSmooth(true);
 	logo->setTexture(logoTexture);
 	logo->setSize(sf::Vector2f(696/2, 260/2));
@@ -28,7 +28,7 @@ int MainMenu::run(sf::RenderWindow &window)
 	//Loading Menu Background
 	sf::RectangleShape menuBackground;
 	sf::Texture *menuTexture = new sf::Texture;
-	menuTexture->loadFromFile("Resources/Backgrounds/menu_background.png");
+	menuTexture->loadFromFile("resources/Backgrounds/menu_background.png");
 	menuBackground.setTexture(menuTexture);
 	menuBackground.setSize(sf::Vector2f(400, 300));
 	menuBackground.setOrigin(sf::Vector2f(menuBackground.getSize().x / 2, menuBackground.getSize().y / 2));
@@ -36,7 +36,7 @@ int MainMenu::run(sf::RenderWindow &window)
 	
 	//New Game Button
 	/*sf::Font* f = new sf::Font();
-	 f->loadFromFile("Resources/BebasNeue.ttf");
+	 f->loadFromFile("resources/BebasNeue.ttf");
 	 sf::Text newGame;
 	 newGame.setFont(*f);
 	 newGame.setString("New Game");
@@ -49,11 +49,11 @@ int MainMenu::run(sf::RenderWindow &window)
 	//Loading newGameButton
 	sf::RectangleShape *newGame = new sf::RectangleShape();
 	sf::Texture *newGameTexture = new sf::Texture;
-	newGameTexture->loadFromFile("Resources/Menu/newgame_button.png");
+	newGameTexture->loadFromFile("resources/Menu/newgame_button.png");
 	newGameTexture->setSmooth(true);
 
 	sf::Texture *newGameTextureS = new sf::Texture;
-	newGameTextureS->loadFromFile("Resources/Menu/newgame_button_selected.png");
+	newGameTextureS->loadFromFile("resources/Menu/newgame_button_selected.png");
 	newGameTextureS->setSmooth(true);
 
 	newGame->setTexture(newGameTexture);
@@ -64,11 +64,11 @@ int MainMenu::run(sf::RenderWindow &window)
 	//Loading highScoreButton
 	sf::RectangleShape *highScore = new sf::RectangleShape();
 	sf::Texture *highScoreTexture = new sf::Texture;
-	highScoreTexture->loadFromFile("Resources/Menu/highscore_button.png");
+	highScoreTexture->loadFromFile("resources/Menu/highscore_button.png");
 	highScoreTexture->setSmooth(true);
 
 	sf::Texture *highScoreTextureS = new sf::Texture;
-	highScoreTextureS->loadFromFile("Resources/Menu/highscore_button_selected.png");
+	highScoreTextureS->loadFromFile("resources/Menu/highscore_button_selected.png");
 	highScoreTextureS->setSmooth(true);
 
 	highScore->setTexture(highScoreTexture);
@@ -79,11 +79,11 @@ int MainMenu::run(sf::RenderWindow &window)
 	//Loading exitButton
 	sf::RectangleShape *exit = new sf::RectangleShape();
 	sf::Texture *exitTexture = new sf::Texture;
-	exitTexture->loadFromFile("Resources/Menu/exit_button.png");
+	exitTexture->loadFromFile("resources/Menu/exit_button.png");
 	exitTexture->setSmooth(true);
 
 	sf::Texture *exitTextureS = new sf::Texture;
-	exitTextureS->loadFromFile("Resources/Menu/exit_button_selected.png");
+	exitTextureS->loadFromFile("resources/Menu/exit_button_selected.png");
 	exitTextureS->setSmooth(true);
 
 	exit->setTexture(exitTexture);

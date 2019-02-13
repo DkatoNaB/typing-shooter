@@ -17,7 +17,7 @@ int PauseScene::run(sf::RenderWindow &window)
 	backgroundImage->loadFromFile("screenshot_temp.png");
 	backgroundTexture->loadFromImage(*backgroundImage);
 	backgroundTexture->setRepeated(true);
-	backgroundShader.loadFromFile("Resources/Shaders/blur.frag", sf::Shader::Fragment);
+	backgroundShader.loadFromFile("resources/Shaders/blur.frag", sf::Shader::Fragment);
 	backgroundShader.setParameter("texture", sf::Shader::CurrentTexture);
 	backgroundShader.setParameter("blur_radius", 0.001);
 	background->setColor(sf::Color(255,255,255,200));
@@ -27,7 +27,7 @@ int PauseScene::run(sf::RenderWindow &window)
 	//Loading logo
 	sf::RectangleShape *logo = new sf::RectangleShape();
 	sf::Texture *logoTexture = new sf::Texture;
-	logoTexture->loadFromFile("Resources/Menu/logo.png");
+	logoTexture->loadFromFile("resources/Menu/logo.png");
 	logoTexture->setSmooth(true);
 	logo->setTexture(logoTexture);
 	logo->setSize(sf::Vector2f(696/2, 260/2));
@@ -37,7 +37,7 @@ int PauseScene::run(sf::RenderWindow &window)
 	//Loading Menu Background
 	sf::RectangleShape menuBackground;
 	sf::Texture *menuTexture = new sf::Texture;
-	menuTexture->loadFromFile("Resources/Backgrounds/menu_background.png");
+	menuTexture->loadFromFile("resources/Backgrounds/menu_background.png");
 	menuBackground.setTexture(menuTexture);
 	menuBackground.setSize(sf::Vector2f(400, 300));
 	menuBackground.setOrigin(sf::Vector2f(menuBackground.getSize().x / 2, menuBackground.getSize().y / 2));
@@ -46,11 +46,11 @@ int PauseScene::run(sf::RenderWindow &window)
 	//Loading mainmenuButton
 	sf::RectangleShape *mainMenuButton = new sf::RectangleShape();
 	sf::Texture *mainMenuTexture = new sf::Texture;
-	mainMenuTexture->loadFromFile("Resources/Menu/mainmenu_button.png");
+	mainMenuTexture->loadFromFile("resources/Menu/mainmenu_button.png");
 	mainMenuTexture->setSmooth(true);
 
 	sf::Texture *mainMenuTextureS = new sf::Texture;
-	mainMenuTextureS->loadFromFile("Resources/Menu/mainmenu_button_selected.png");
+	mainMenuTextureS->loadFromFile("resources/Menu/mainmenu_button_selected.png");
 	mainMenuTextureS->setSmooth(true);
 
 	mainMenuButton->setTexture(mainMenuTexture);
@@ -61,11 +61,11 @@ int PauseScene::run(sf::RenderWindow &window)
 	//Loading resumeButton
 	sf::RectangleShape *resumeButton = new sf::RectangleShape();
 	sf::Texture *resumeTexture = new sf::Texture;
-	resumeTexture->loadFromFile("Resources/Menu/resume_button.png");
+	resumeTexture->loadFromFile("resources/Menu/resume_button.png");
 	resumeTexture->setSmooth(true);
 
 	sf::Texture *resumeTextureS = new sf::Texture;
-	resumeTextureS->loadFromFile("Resources/Menu/resume_button_selected.png");
+	resumeTextureS->loadFromFile("resources/Menu/resume_button_selected.png");
 	resumeTextureS->setSmooth(true);
 
 	resumeButton->setTexture(resumeTexture);

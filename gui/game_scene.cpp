@@ -16,7 +16,7 @@ int GameScene::run(sf::RenderWindow &window)
 	//Setting background
 	sf::Sprite *background = new sf::Sprite();
 	sf::Texture *backgroundTexture = new sf::Texture;
-	backgroundTexture->loadFromFile("Resources/Backgrounds/stars.png");
+	backgroundTexture->loadFromFile("resources/Backgrounds/stars.png");
 	backgroundTexture->setRepeated(true);
 	background->setTexture(*backgroundTexture);
 	background->setTextureRect(sf::IntRect(0, 0, resolution.getX(), resolution.getY()));
@@ -48,7 +48,7 @@ int GameScene::run(sf::RenderWindow &window)
 
 	sf::RectangleShape player;
 	sf::Texture *playerTexture = new sf::Texture;
-	playerTexture->loadFromFile("Resources/Sprites/player.png");
+	playerTexture->loadFromFile("resources/Sprites/player.png");
 	player.setTexture(playerTexture);
 	player.setSize(sf::Vector2f(50, 50));
 	player.setOrigin(sf::Vector2f(25, 25));
@@ -59,7 +59,7 @@ int GameScene::run(sf::RenderWindow &window)
 	int currentWave = 0;
 	float waveAlpha = 0;
 	sf::Font* f = new sf::Font();
-	f->loadFromFile("Resources/Fonts/Ubuntu-Regular.ttf");
+	f->loadFromFile("resources/Fonts/Ubuntu-Regular.ttf");
 	
 	sf::Text* scoreText = new sf::Text("Score 212312313",*f);
 	scoreText->setPosition(sf::Vector2f(10, resolution.getY()-scoreText->getLocalBounds().height-10));
@@ -81,7 +81,7 @@ int GameScene::run(sf::RenderWindow &window)
 
 	//loading background music
 	sf::Music music;
-	if (!music.openFromFile("Resources/Sounds/bg.ogg")) 
+	if (!music.openFromFile("resources/Sounds/bg.ogg")) 
 		std::cerr << "oops\n";
 	music.setVolume(100);
 	music.setLoop(true);
@@ -111,7 +111,7 @@ int GameScene::run(sf::RenderWindow &window)
 						if (l.shoot(c))
 						{
 							//Shooting sound
-							buffer.loadFromFile("Resources/Sounds/shot.wav");
+							buffer.loadFromFile("resources/Sounds/shot.wav");
 							sound.setBuffer(buffer);
 							sound.setVolume(5);
 							sound.play();
@@ -142,7 +142,7 @@ int GameScene::run(sf::RenderWindow &window)
 					else
 					{
 					//"Mistype" sound
-					buffer.loadFromFile("Resources/Sounds/ooa.wav");
+					buffer.loadFromFile("resources/Sounds/ooa.wav");
 					sound.setBuffer(buffer);
 					sound.setVolume(5);
 					sound.play();
@@ -216,7 +216,7 @@ int GameScene::run(sf::RenderWindow &window)
 			if (l.isGameOver())
 			{
 				music.stop();
-				buffer.loadFromFile("Resources/Sounds/go.wav");
+				buffer.loadFromFile("resources/Sounds/go.wav");
 				sound.setBuffer(buffer);
 				sound.setVolume(100);
 				sound.play();
@@ -230,7 +230,7 @@ int GameScene::run(sf::RenderWindow &window)
 				if(waveAlpha <= 0 && currentWave > 0)
 				{
 					//next wave sound
-					buffer.loadFromFile("Resources/Sounds/wave.wav");
+					buffer.loadFromFile("resources/Sounds/wave.wav");
 					sound.setBuffer(buffer);
 					sound.setVolume(90);
 					sound.play();
