@@ -1,4 +1,4 @@
-#include "Enemy.h"
+#include "enemy.h"
 
 Enemy::Enemy(std::string text,Position &position,Position &playerPosition,float movementSpeed,float acceleration)
 {

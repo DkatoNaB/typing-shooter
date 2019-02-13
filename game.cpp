@@ -1,12 +1,13 @@
 #include <logic/game_logic.h>
 #include <gui/enemy_gui.h>
 #include <gui/missile_gui.h>
-#include <gui/scene.cpp>
-#include <gui/main_menu.cpp>
-#include <gui/score_scene.cpp>
-#include <gui/game_scene.cpp>
+#include <gui/scene.h>
+#include <gui/main_menu.h>
+#include <gui/score_scene.h>
+#include <gui/game_scene.h>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include <iostream>
 
 

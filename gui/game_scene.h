@@ -1,9 +1,12 @@
 #ifndef GAMESCENE
 #define GAMESCENE
 
+#include "scene.h"
+#include "enemy_gui.h"
 #include <logic/game_logic.h>
 
-#include <iostream>
+//#include <iostream>
+#include <vector>
 
 //TODO inclass //// namespaces
 /**

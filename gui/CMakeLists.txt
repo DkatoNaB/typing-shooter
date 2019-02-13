@@ -12,4 +12,10 @@ add_library(gui SHARED
 	player_gui.cpp
 	scene.cpp
 	score_scene.cpp
-	)
+)
+
+find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
+target_link_libraries(gui
+	sfml-graphics
+	sfml-audio
+)

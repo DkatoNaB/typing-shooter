@@ -1,4 +1,4 @@
-#include "EnemyGUI.h"
+#include "enemy_gui.h"
 
 EnemyGUI::EnemyGUI(Enemy &enemy)
 {

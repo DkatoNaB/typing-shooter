@@ -1,4 +1,4 @@
-#include "MissileGUI.h"
+#include "missile_gui.h"
 
 MissileGUI::MissileGUI(Missile &missile)
 {
@@ -14,8 +14,11 @@ MissileGUI::MissileGUI(Missile &missile)
 }
 
 void MissileGUI::draw(sf::RenderTarget& target, sf::RenderStates states) const
+//void MissileGUI::draw(sf::RenderWindow& window)
 {
 	target.draw(body, states);
+//	body.setPosition(missle->getPosition().getX(), missle->getPosition().getY());
+//	window.draw(body);
 }
 
 void MissileGUI::setPosition(sf::Vector2f position)

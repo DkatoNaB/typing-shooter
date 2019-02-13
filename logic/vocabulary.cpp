@@ -1,9 +1,10 @@
-#include "Vocabulary.h"
+#include "vocabulary.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <limits>
 #include <iostream>
+#include <algorithm>
 
 Vocabulary::Vocabulary(std::string filename)
 {

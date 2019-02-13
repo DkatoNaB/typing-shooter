@@ -6,7 +6,7 @@
 //  Copyright (c) 2015. elte. All rights reserved.
 //
 
-#include "Menu.h"
+#include "menu.h"
 
 
 Menu::Menu(float width, float height)

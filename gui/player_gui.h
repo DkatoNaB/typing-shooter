@@ -1,9 +1,9 @@
 //
-//  PlayerGUI.h
-//  TypingShooter
+//	PlayerGUI.h
+//	TypingShooter
 //
-//  Created by Eke Dániel on 2015. 04. 02..
-//  Copyright (c) 2015. elte. All rights reserved.
+//	Created by Eke Dániel on 2015. 04. 02..
+//	Copyright (c) 2015. elte. All rights reserved.
 //
 
 #pragma once
@@ -13,10 +13,10 @@
 class PlayerGUI
 {
 public:
-    PlayerGUI();
-    ~PlayerGUI();
-    void draw(sf::RenderWindow &window);
-    sf::Sprite body;
+	PlayerGUI();
+	~PlayerGUI();
+	void draw(sf::RenderWindow &window);
+	sf::Sprite body;
 private:
-    
+	sf::Texture texture;
 };

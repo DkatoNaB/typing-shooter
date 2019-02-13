@@ -4,6 +4,7 @@
 #include "enemy.h"
 #include "vocabulary.h"
 #include "missile.h"
+#include "position.h"
 
 #include <vector>
 /**
@@ -18,6 +19,7 @@ public:
 	@brief Creates a new GameLogic.
 	*/
 	GameLogic();
+	//GameLogic(Position p);
 	/**
 	@brief Copy constructor for the GameLogic.
 	*/

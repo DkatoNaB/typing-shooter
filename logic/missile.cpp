@@ -3,7 +3,7 @@
 @authors Dániel Eke , Benjamin Ferenc Hajas
 */
 
-#include "Missile.h"
+#include "missile.h"
 
 Missile::Missile(Position playerPosition, Enemy *target, float force)
 {

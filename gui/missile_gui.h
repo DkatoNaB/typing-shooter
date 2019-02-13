@@ -20,7 +20,8 @@ public:
 	/**
 		@brief Draws the missile.
 	*/
-	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const override;
+	//void draw(sf::RenderWindow& window);
 	/**
 	@brief Changes the position of the missile.
 	@param position	The new position of the missile. 

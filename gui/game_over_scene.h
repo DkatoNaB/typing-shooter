@@ -22,4 +22,5 @@ private:
 	*/
 	int run(sf::RenderWindow &window);
 };
+
 #endif

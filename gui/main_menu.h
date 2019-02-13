@@ -13,7 +13,8 @@ class MainMenu : public Scene
 	@brief Runs the scene.
 	@param window	The window to run the scene in.
 	*/
-	int run(sf::RenderWindow &window);
+public:
+	int run(sf::RenderWindow &window) override;
 };
 
 #endif

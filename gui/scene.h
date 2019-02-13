@@ -37,6 +37,8 @@ public:
 	*/
 	sf::Sound hsound;
 
+	Scene();
+	virtual ~Scene();
 	
 };
 #endif

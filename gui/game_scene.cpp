@@ -1,13 +1,12 @@
+#include "game_scene.h"
+#include "enemy_gui.h"
+#include "missile_gui.h"
+#include "scene.h"
+#include "pause_scene.h"
 #include "game_over_scene.h"
-#include <gui/enemy_gui.h>
-#include <gui/missile_gui.h>
-#include <gui/scene.h>
-#include <gui/pause_scene.h>
-#include <gui/game_over_scene.h>
+#include "game_view.h"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
-
-#include <iostream>
 
 //TODO maybe some {} fk up
 int GameScene::run(sf::RenderWindow &window)
@@ -276,6 +275,7 @@ int GameScene::run(sf::RenderWindow &window)
 	return -1;
 }
 
+// this function should be moved out???? was a global function....
 void GameScene::getEnemies(std::vector<EnemyGUI> &enemies, GameLogic &l)
 {
 	enemies.clear();

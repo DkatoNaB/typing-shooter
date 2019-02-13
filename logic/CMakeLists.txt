@@ -1,4 +1,3 @@
-#project(logic_lib)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 add_library(logic_lib SHARED
 	enemy.cpp
@@ -9,4 +8,3 @@ add_library(logic_lib SHARED
 )
 
 #target_include_directories(logic_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-

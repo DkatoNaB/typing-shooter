@@ -12,3 +12,6 @@ void Scene::hoverSound(bool f)
 		hsound.play();
 	}	
 }
+
+Scene::Scene() = default;
+Scene::~Scene() = default;
