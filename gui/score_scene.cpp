@@ -1,14 +1,15 @@
 #ifndef SCORE_SCENE
 #define SCORE_SCENE
 
-#include "Scene.cpp"
-#include "../../Logic/Position.h"
-#include "../../Logic/ScoreLoader.h"
+// TODO including cpps in 2k19 OMEGALUL
+// #include "Scene.cpp"
+#include <logic/position.h>
+#include <logic/score_loader.h>
+#include <SFML/Audio.hpp>
 #include <vector>
 #include <iostream>
 #include <sstream>
 #include <iomanip>
-#include <SFML/Audio.hpp>
 
 /**
 @brief Highscore scene

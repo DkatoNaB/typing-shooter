@@ -1,8 +1,8 @@
 #ifndef ENEMYGUI_H
 #define ENEMYGUI_H
 
+#include <logic/enemy.h>
 #include <SFML/Graphics.hpp>
-#include "../Logic/Enemy.h"
 
 /**
 @brief Body of an enemy

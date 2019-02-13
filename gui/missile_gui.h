@@ -1,8 +1,8 @@
 #ifndef MISSILEGUI_H
 #define MISSILEGUI_H
 
+#include <logic/missile.h>
 #include <SFML/Graphics.hpp>
-#include "../Logic/Missile.h"
 
 /**
 @brief Body of a missile
