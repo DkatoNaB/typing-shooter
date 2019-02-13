@@ -1,5 +1,3 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../logic)
 add_library(gui SHARED
 	enemy_gui.cpp
 	game_over_scene.cpp
