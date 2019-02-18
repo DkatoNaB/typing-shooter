@@ -185,3 +185,4 @@ FakesAssemblies/
 #custom ignore
 tags
 *.json
+*.py
